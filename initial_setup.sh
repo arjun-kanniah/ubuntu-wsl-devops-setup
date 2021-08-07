@@ -13,7 +13,7 @@ pip3 install ansible --user
 
 git config --global core.autocrlf input
 
-echo "$SUDO_PASS" | sudo apt install zsh
+echo "$SUDO_PASS" | sudo apt install zsh -y
 echo "0" | zsh
 chsh -s $(which zsh) && \
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
