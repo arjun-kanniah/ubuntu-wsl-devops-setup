@@ -10,3 +10,5 @@ echo "$SUDO_PASS" | sudo apt-get upgrade -y
 
 echo "$SUDO_PASS" | sudo apt install python3-pip -y
 pip3 install ansible --user
+
+ansible-galaxy install -r roles/requirements.yml
