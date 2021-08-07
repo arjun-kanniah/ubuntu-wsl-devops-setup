@@ -1,0 +1,55 @@
+---
+
+- name: Setup Ubuntu WSL with Required Packages and Configuration
+  hosts: localhost
+  become: yes
+
+  vars_files:
+    - vars/setup_vars.yml
+
+  tasks: 
+
+    - name: "Create SSH key-pair for {{ ubuntu_user }}"
+      openssh_keypair:
+        path: '{{ ssh_key_path }}'
+      become_user: '{{ ubuntu_user }}'
+
+    - name: Install Java OpenJDK
+      include_role: 
+        name: ansible-role-java
+      vars:
+        - java_packages: '{{ openjdk_package }}'
+        - java_home: '{{ java_home_path }}'
+
+    - name: Install Docker CE and Docker Compose
+      include_role:
+        name: ansible-role-docker
+      vars:
+        - docker_users: '{{ docker_sudo_users }}'
+
+    - name: Install Required Python Packages via pip3
+      include_role: 
+        name: ansible-role-pip
+      vars:
+        - pip_install_packages: '{{ pip_package_list }}'
+
+    - name: Install AWX Tower
+      include_role:
+        name: ansible-role-awx
+      vars:
+        - docker_hub_password: '{{ docker_hub_pass }}'
+
+    - name: Install Jenkins CI
+      include_role:
+        name: ansible-role-jenkins_as_docker
+      vars:
+       - jenkins_admin_user: '{{ jenkins_admin_user }}'
+       - jenkins_admin_password: '{{ jenkins_admin_pass }}'
+       - docker_hub_username: '{{ docker_hub_user }}'
+       - docker_hub_password: '{{ docker_hub_pass }}'
+
+    - name: Setup Nginx to Serve Apps on Localhost
+      include_role:
+        name: ansible-role-nginx_for_local
+      vars:
+        - nginx_app_list: '{{ app_list }}'
