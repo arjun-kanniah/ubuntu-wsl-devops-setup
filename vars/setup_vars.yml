@@ -1,6 +1,7 @@
 ---
 ubuntu_user: 'arjunkanniah'
-ssh_key_path: '/home/{{ ubuntu_user }}/.ssh/id_rsa'
+ubuntu_user_home: '/home/{{ ubuntu_user }}'
+ssh_key_path: '{{ ubuntu_user_home }}/.ssh/id_rsa'
 
 sudoers_file_path: '/etc/sudoers'
 sudo_nopass_line: '%sudo ALL=(ALL:ALL) NOPASSWD:ALL'
@@ -43,3 +44,6 @@ jenkins_admin_pass: !vault |
 app_list:
   - awx
   - jenkins
+
+zshrc_file_path: '{{ ubuntu_user_home }}/.zshrc'
+zsh_theme_name: 'agnoster'

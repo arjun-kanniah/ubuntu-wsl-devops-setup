@@ -72,3 +72,15 @@
         name: ansible-role-nginx_for_local
       vars:
         - nginx_app_list: '{{ app_list }}'
+
+    - name: Set Custom Oh-My-Zsh Theme
+      lineinfile:
+        path: '{{ zshrc_file_path }}'
+        regexp: '^ZSH_THEME='
+        line: 'ZSH_THEME=""{{ zsh_theme_name }}""'
+      notify: reload zshrc
+
+  handlers:
+
+    - name: reload zshrc
+      command: 'source {{ zshrc_file_path }}'
