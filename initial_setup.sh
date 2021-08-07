@@ -19,7 +19,6 @@ echo "$SUDO_PASS" | sudo chmod 0644 ~/.ansible_vault_pass
 echo "$SUDO_PASS" | sudo apt install zsh -y
 echo "$SUDO_PASS" | chsh -s $(which zsh)
 echo "y" | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-zsh
 
 ansible-galaxy install -r roles/requirements.yml
 
