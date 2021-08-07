@@ -9,6 +9,9 @@ visudo_path: '/usr/sbin/visudo -cf %s'
 openjdk_package: 'openjdk-11-jdk'
 java_home_path: '/usr/lib/jvm/java-11-openjdk-amd64'
 
+terraform_install_version: '1.0.2'
+packer_install_version: '1.7.0'
+
 docker_sudo_users: '{{ ubuntu_user }}'
 
 pip_package_list:

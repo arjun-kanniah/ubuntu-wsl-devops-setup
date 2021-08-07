@@ -28,6 +28,18 @@
         - java_packages: '{{ openjdk_package }}'
         - java_home: '{{ java_home_path }}'
 
+    - name: Install Terraform
+      include_role: 
+        name: ansible-role-terraform
+      vars:
+        - terraform_version: '{{ terraform_install_version }}'
+
+    - name: Install Packer
+      include_role: 
+        name: ansible-role-packer
+      vars:
+        - packer_version: '{{ packer_install_version }}'
+
     - name: Install Docker CE and Docker Compose
       include_role:
         name: ansible-role-docker

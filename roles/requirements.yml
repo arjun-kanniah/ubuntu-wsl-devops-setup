@@ -25,7 +25,17 @@
   version: master
   scm: git
 
+- name: ansible-role-packer
+  src: https://github.com/arjun-kanniah/ansible-role-packer.git
+  version: master
+  scm: gi
+
 - name: ansible-role-pip
   src: https://github.com/arjun-kanniah/ansible-role-pip.git
+  version: master
+  scm: gi
+
+- name: ansible-role-terraform
+  src: https://github.com/arjun-kanniah/ansible-role-terraform.git
   version: master
   scm: git
