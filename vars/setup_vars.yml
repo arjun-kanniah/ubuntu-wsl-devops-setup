@@ -24,7 +24,7 @@ docker_hub_pass: !vault |
           3438666235616261350a636530346435656137646238393066353132326337626662343734663363
           3163
 
-jenkins_admin_user: '{{ ubuntu_user }}'
+jenkins_admin: '{{ ubuntu_user }}'
 jenkins_admin_pass: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           38386464633537666161356138366265626339363134666331326330303962383531313138333565

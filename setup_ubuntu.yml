@@ -43,7 +43,7 @@
       include_role:
         name: ansible-role-jenkins_as_docker
       vars:
-       - jenkins_admin_user: '{{ jenkins_admin_user }}'
+       - jenkins_admin_user: '{{ jenkins_admin }}'
        - jenkins_admin_password: '{{ jenkins_admin_pass }}'
        - docker_hub_username: '{{ docker_hub_user }}'
        - docker_hub_password: '{{ docker_hub_pass }}'
