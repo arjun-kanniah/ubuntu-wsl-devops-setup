@@ -13,13 +13,13 @@ pip3 install ansible --user
 
 git config --global core.autocrlf input
 
-echo "$SUDO_PASS" | sudo apt install zsh -y
-echo "0" | zsh
-chsh -s $(which zsh) && \
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 echo "$SUDO_PASS" > ~/.ansible_vault_pass
 echo "$SUDO_PASS" | sudo chmod 0644 ~/.ansible_vault_pass
+
+echo "$SUDO_PASS" | sudo apt install zsh -y
+echo "$SUDO_PASS" | chsh -s $(which zsh)
+echo "y" | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+zsh
 
 ansible-galaxy install -r roles/requirements.yml
 
