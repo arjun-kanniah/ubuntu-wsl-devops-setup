@@ -2,6 +2,10 @@
 ubuntu_user: 'arjunkanniah'
 ssh_key_path: '/home/{{ ubuntu_user }}/.ssh/id_rsa'
 
+sudoers_file_path: '/etc/sudoers'
+sudo_nopass_line: '%sudo ALL=(ALL:ALL) NOPASSWD:ALL'
+visudo_path: '/usr/sbin/visudo -cf %s'
+
 openjdk_package: 'openjdk-11-jdk'
 java_home_path: '/usr/lib/jvm/java-11-openjdk-amd64'
 

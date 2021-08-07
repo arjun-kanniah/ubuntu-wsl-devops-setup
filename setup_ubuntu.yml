@@ -9,10 +9,17 @@
 
   tasks: 
 
-    # - name: "Create SSH key-pair for {{ ubuntu_user }}"
-    #   openssh_keypair:
-    #     path: '{{ ssh_key_path }}'
-    #   become_user: '{{ ubuntu_user }}'
+    - name: "Create SSH key-pair for {{ ubuntu_user }}"
+      openssh_keypair:
+        path: '{{ ssh_key_path }}'
+      become_user: '{{ ubuntu_user }}'
+
+    - name: "Edit and validate sudoers for {{ ubuntu_user }}"
+      lineinfile:
+        path: '{{ sudoers_file_path }}'
+        regexp: '^%sudo ALL='
+        line: '{{ sudo_nopass_line }}'
+        validate: '{{ visudo_path }}'
 
     - name: Install Java OpenJDK
       include_role: 
