@@ -40,6 +40,7 @@
           alias gcm="git commit -m"
           alias gpl="git pull"
           alias gps="git push"
+          alias gst="git status"
         insertafter: EOF
         create: yes
 

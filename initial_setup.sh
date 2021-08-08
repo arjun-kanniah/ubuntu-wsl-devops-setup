@@ -26,4 +26,4 @@ ansible-playbook setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
 
 echo "$SUDO_PASS" | sudo usermod -aG docker $USER
 
-source ~/.bashrc
+source ~/.bash_alias && source ~/.bashrc
