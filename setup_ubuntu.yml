@@ -44,7 +44,8 @@
       include_role:
         name: ansible-role-docker
       vars:
-        - docker_users: '{{ docker_sudo_users }}'
+        - docker_users: 
+            - '{{ docker_sudo_users }}'
 
     - name: Install Required Python Packages via pip3
       include_role: 
@@ -66,6 +67,7 @@
        - jenkins_admin_password: '{{ jenkins_admin_pass }}'
        - docker_hub_username: '{{ docker_hub_user }}'
        - docker_hub_password: '{{ docker_hub_pass }}'
+       - dockerfile_build_path: '{{ ansible_roles_path }}/ansible-role-jenkins_as_docker/files'
 
     - name: Setup Nginx to Serve Apps on Localhost
       include_role:
