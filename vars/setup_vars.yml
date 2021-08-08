@@ -16,7 +16,7 @@ sudoers_file_path: '/etc/sudoers'
 sudo_nopass_line: '%sudo ALL=(ALL:ALL) NOPASSWD:ALL'
 visudo_path: '/usr/sbin/visudo -cf %s'
 
-bashrc_file_path: '{{ ubuntu_user_home }}/.bashrc'
+bash_alias_file_path: '{{ ubuntu_user_home }}/.bash_alias'
 
 openjdk_package: 'openjdk-11-jdk'
 java_home_path: '/usr/lib/jvm/java-11-openjdk-amd64'

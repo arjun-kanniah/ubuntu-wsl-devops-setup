@@ -24,6 +24,6 @@ ansible-galaxy install -r roles/requirements.yml
 
 ansible-playbook setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
 
-sudo usermod -aG docker $USER
+echo "$SUDO_PASS" | sudo usermod -aG docker $USER
 
-echo "$SUDO_PASS" | source ~/.bashrc
+source ~/.bashrc

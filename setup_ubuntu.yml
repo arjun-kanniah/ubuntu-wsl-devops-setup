@@ -31,7 +31,7 @@
 
     - name: Create git aliases
       blockinfile:
-        path: '{{ bashrc_file_path }}'
+        path: '{{ bash_alias_file_path }}'
         block: |
           alias gcl="git clone"
           alias gbr="git branch"
@@ -41,6 +41,7 @@
           alias gpl="git pull"
           alias gps="git push"
         insertafter: EOF
+        create: yes
 
     - name: Install Java OpenJDK
       include_role: 
