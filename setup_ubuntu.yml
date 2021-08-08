@@ -7,7 +7,15 @@
   vars_files:
     - vars/setup_vars.yml
 
-  tasks: 
+  tasks:
+
+    - name: Ensure ssh directory exists
+      file: 
+        path: '{{ ssh_dir_path }}'
+        state: directory
+        owner: '{{ ubuntu_user }}'
+        group: '{{ ubuntu_user }}'
+        mode: '0700'
 
     - name: "Create SSH key-pair for {{ ubuntu_user }}"
       openssh_keypair:
