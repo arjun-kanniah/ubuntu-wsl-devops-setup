@@ -26,4 +26,6 @@ ansible-galaxy install -r roles/requirements.yml
 
 ansible-playbook setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
 
+source ~/.profile
+
 echo "$SUDO_PASS" | chsh -s $(which zsh)

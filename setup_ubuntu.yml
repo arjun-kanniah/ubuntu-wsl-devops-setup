@@ -75,23 +75,8 @@
       vars:
         - nginx_app_list: '{{ app_list }}'
 
-    - name: Install Zsh on Ubuntu
-      package: 
-        name: zsh
-        state: latest
-      
-    - name: Install Oh-My-Zsh Terminal
-      command: 'echo {{ jenkins_admin_pass }} | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
-      become_user: '{{ ubuntu_user }}'
-
-    - name: Set Custom Oh-My-Zsh Theme
-      lineinfile:
-        path: '{{ zshrc_file_path }}'
-        regexp: '^ZSH_THEME='
-        line: 'ZSH_THEME=""{{ zsh_theme_name }}""'
-      notify: reload zshrc
-
-  handlers:
-
-    - name: reload zshrc
-      command: 'source {{ zshrc_file_path }}'
+    - name: "Install Zsh and Oh-My-ZSH for {{ ubuntu_user }}"
+      include_role:
+        name: ansible-role-zsh
+      vars:
+        - zsh_theme: '{{ zsh_theme_name }}'

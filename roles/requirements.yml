@@ -39,3 +39,8 @@
   src: https://github.com/arjun-kanniah/ansible-role-terraform.git
   version: master
   scm: git
+
+- name: ansible-role-zsh
+  src: https://github.com/arjun-kanniah/ansible-role-zsh.git
+  version: master
+  scm: git
