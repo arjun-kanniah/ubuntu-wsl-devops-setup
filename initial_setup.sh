@@ -18,14 +18,8 @@ echo "$SUDO_PASS" | sudo chmod 0644 ~/.ansible_vault_pass
 
 source ~/.profile
 
-#echo "$SUDO_PASS" | sudo apt install zsh -y
-
-#echo "y" | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 ansible-galaxy install -r roles/requirements.yml
 
 ansible-playbook setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
 
-source ~/.profile
-
-echo "$SUDO_PASS" | chsh -s $(which zsh)
+source ~/.bashrc

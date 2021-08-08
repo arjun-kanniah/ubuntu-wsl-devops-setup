@@ -17,9 +17,17 @@
     - name: "Edit and validate sudoers for {{ ubuntu_user }}"
       lineinfile:
         path: '{{ sudoers_file_path }}'
-        regexp: '^%sudo ALL='
+        regexp: '^%sudo'
         line: '{{ sudo_nopass_line }}'
         validate: '{{ visudo_path }}'
+
+    - name: Create git aliases
+      blockinfile:
+        path: '{{ bashrc_file_path }}'
+        block: |
+          '{{ item }}'
+        insertafter: EOF
+      loop: '{{ git_command_list }}'
 
     - name: Install Java OpenJDK
       include_role: 
@@ -74,9 +82,3 @@
         name: ansible-role-nginx_for_local
       vars:
         - nginx_app_list: '{{ app_list }}'
-
-    - name: "Install Zsh and Oh-My-ZSH for {{ ubuntu_user }}"
-      include_role:
-        name: ansible-role-zsh
-      vars:
-        - zsh_theme: '{{ zsh_theme_name }}'
