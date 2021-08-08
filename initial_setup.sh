@@ -1,6 +1,8 @@
 #! /usr/bin/bash
 
-read -s -p "Enter your sudo password: " SUDO_PASS
+read -s -p "Enter your sudo password: " password
+
+SUDO_PASS=$password
 
 echo "$SUDO_PASS" | sudo apt update
 echo "$SUDO_PASS" | sudo apt upgrade -y
@@ -22,4 +24,6 @@ ansible-galaxy install -r roles/requirements.yml
 
 ansible-playbook setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
 
-source ~/.bashrc
+sudo usermod -aG docker $USER
+
+echo "$SUDO_PASS" | source ~/.bashrc
