@@ -33,9 +33,14 @@
       blockinfile:
         path: '{{ bashrc_file_path }}'
         block: |
-          '{{ item }}'
+          alias gcl="git clone"
+          alias gbr="git branch"
+          alias gco="git chekout"
+          alias gad="git add --all"
+          alias gcm="git commit -m"
+          alias gpl="git pull"
+          alias gps="git push"
         insertafter: EOF
-      loop: '{{ git_command_list }}'
 
     - name: Install Java OpenJDK
       include_role: 
