@@ -31,9 +31,9 @@ source ~/.bashrc
 source ~/.bash_alias
 
 echo "$SUDO_PASS" | sudo apt install zsh -y
+echo "0" | zsh
 echo "$SUDO_PASS" | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i "s/robbyrussell/agnoster/" ~/.zshrc
-echo "0" | zsh
 echo "$SUDO_PASS" | chsh -s $(which zsh)
 
 source ~/.profile
