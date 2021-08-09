@@ -38,16 +38,14 @@ source ~/.bash_alias
 # Install and setup zsh and oh-my-zsh
 echo "$SUDO_PASS" | sudo apt install zsh -y
 echo "0" | zsh
-echo "$SUDO_PASS" | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-zsh
+echo "$SUDO_PASS" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/batch-mode/tools/install.sh)" -s --batch
 source ~/.zshrc
 sed -i "s/robbyrussell/agnoster/" ~/.zshrc
-echo "$SUDO_PASS" | chsh -s $(which zsh)
 sed -i "s/%n@%m/%n@%m-wsl" ~/.oh-my-zsh/themes/.oh-my-zsh/themes
 sed -i "s/%~/%2~/" ~/.oh-my-zsh/themes/.oh-my-zsh/themes
 curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
 echo "eval `dircolors ~/.dircolors`" >> ~/.zshrc
-zsh
+echo "$SUDO_PASS" | chsh -s $(which zsh)
 
 # Reload bash profile and config file
 source ~/.profile
