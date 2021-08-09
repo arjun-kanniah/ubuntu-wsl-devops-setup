@@ -39,6 +39,8 @@ source ~/.bash_alias
 echo "$SUDO_PASS" | sudo apt install zsh -y
 echo "0" | zsh
 echo "$SUDO_PASS" | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+zsh
+source ~/.zshrc
 sed -i "s/robbyrussell/agnoster/" ~/.zshrc
 echo "$SUDO_PASS" | chsh -s $(which zsh)
 sed -i "s/%n@%m/%n@%m-wsl" ~/.oh-my-zsh/themes/.oh-my-zsh/themes
