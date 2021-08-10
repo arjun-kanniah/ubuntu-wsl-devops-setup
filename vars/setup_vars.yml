@@ -7,9 +7,13 @@ ubuntu_user_pass: !vault |
           30363035623736643235396233376330366163393336666634336331353833396664393664643539
           3537373935643936360a323335666461363763303538366564666364316363663463303066656434
           6638
+
 ubuntu_user_home: '/home/{{ ubuntu_user }}'
+ubuntu_user_installs: '{{ ubuntu_user_home }}/installation-files'
+
 ssh_dir_path: '{{ ubuntu_user_home }}/.ssh'
 ssh_key_path: '{{ ssh_dir_path }}/id_rsa'
+
 ansible_roles_path: '{{ ubuntu_user_home }}/.ansible/roles'
 
 sudoers_file_path: '/etc/sudoers'
@@ -55,3 +59,5 @@ jenkins_admin_pass: !vault |
 app_list:
   - awx
   - jenkins
+
+zsh_theme_name: 'agnoster'

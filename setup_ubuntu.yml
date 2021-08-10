@@ -81,6 +81,7 @@
         name: ansible-role-awx
       vars:
         - docker_hub_password: '{{ docker_hub_pass }}'
+        - awx_repo_dir: '{{ ubuntu_user_installs }}/awx-tower'
 
     - name: Install Jenkins CI
       include_role:
@@ -97,3 +98,9 @@
         name: ansible-role-nginx_for_local
       vars:
         - nginx_app_list: '{{ app_list }}'
+
+    - name: Setup and Customize Oh-My-Zsh
+      include_role:
+        name: ansible-role-ohmyzsh
+      vars:
+        zsh_theme: '{{ zsh_theme_name }}'
