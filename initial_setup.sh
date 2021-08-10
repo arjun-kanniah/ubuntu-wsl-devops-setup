@@ -26,7 +26,7 @@ source ~/.profile
 
 # Install necessary ansible roles and setup ubuntu for devops
 ansible-galaxy install -r ~/ubuntu-wsl-devops-setup/roles/requirements.yml
-ansible-playbook setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
+ansible-playbook ~/ubuntu-wsl-devops-setup/setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
 
 # Add local user to docker group
 echo "$SUDO_PASS" | sudo usermod -aG docker $USER
