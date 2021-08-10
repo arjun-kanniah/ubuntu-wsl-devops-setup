@@ -103,6 +103,7 @@
       include_role:
         name: ansible-role-ohmyzsh
       vars:
+        user: '{{ ubuntu_user }}'
         user_home: '{{ ubuntu_user_home }}'
         users_installs_dir: '{{ ubuntu_user_installs }}'
         zsh_theme: '{{ zsh_theme_name }}'
