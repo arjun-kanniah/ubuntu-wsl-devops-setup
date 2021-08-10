@@ -31,6 +31,9 @@ source ~/.profile
 ansible-galaxy install -r ~/ubuntu-wsl-devops-setup/roles/requirements.yml --force
 ansible-playbook ~/ubuntu-wsl-devops-setup/setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
 
+# Add user to docker group
+echo "$SUDO_PASS" | usermod -aG docker $USER
+
 # Reload config files
 source ~/.bashrc 
 source ~/.bash_alias
