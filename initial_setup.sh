@@ -12,11 +12,14 @@ echo "$SUDO_PASS" | sudo apt upgrade -y
 echo "$SUDO_PASS" | sudo apt-get update
 echo "$SUDO_PASS" | sudo apt-get upgrade -y
 
-# INstall pip3 and ansible
+# Install pip3 and ansible
 echo "$SUDO_PASS" | sudo apt install python3-pip -y
 pip3 install ansible --user
 
+# Git configs
 git config --global core.autocrlf input
+git config --global user.name "Arjun Kanniah"
+git config --gloabl user.email: "arjun.kanniah@outlook.com"
 
 # Create ansible vault token
 echo "$SUDO_PASS" > ~/.ansible_vault_pass
@@ -27,9 +30,6 @@ source ~/.profile
 # Install necessary ansible roles and setup ubuntu for devops
 ansible-galaxy install -r ~/ubuntu-wsl-devops-setup/roles/requirements.yml --force
 ansible-playbook ~/ubuntu-wsl-devops-setup/setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
-
-# Add local user to docker group
-echo "$SUDO_PASS" | sudo usermod -aG docker $USER
 
 # Reload config files
 source ~/.bashrc 
