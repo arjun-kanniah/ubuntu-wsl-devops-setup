@@ -51,4 +51,4 @@ source ~/.bash_alias
 
 # # Reload bash profile and config file
 # source ~/.profile
-# zsh && source ~/.zshrc
+zsh && source ~/.zshrc
