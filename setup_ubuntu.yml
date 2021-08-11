@@ -98,6 +98,11 @@
         name: ansible-role-nginx_for_local
       vars:
         - nginx_app_list: '{{ app_list }}'
+    
+    - name: Check if Zsh and Oh-My-Zsh are installed
+      stat:
+        path: '{{ ubuntu_user_home }}/.oh-my-zsh'
+      register: ohmyzsh
 
     - name: Setup and Customize Oh-My-Zsh
       include_role:
@@ -107,4 +112,5 @@
         user_home: '{{ ubuntu_user_home }}'
         users_installs_dir: '{{ ubuntu_user_installs }}'
         zsh_theme: '{{ zsh_theme_name }}'
+      when: ohmyzsh.stat.exists == false
         
