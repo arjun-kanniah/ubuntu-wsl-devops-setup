@@ -31,24 +31,7 @@ source ~/.profile
 ansible-galaxy install -r ~/ubuntu-wsl-devops-setup/roles/requirements.yml --force
 ansible-playbook ~/ubuntu-wsl-devops-setup/setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
 
-# Add user to docker group
-echo "$SUDO_PASS" | sudo usermod -aG docker $USER
-
 # Reload config files
 source ~/.bashrc 
 source ~/.bash_alias
-
-# # Install and setup zsh and oh-my-zsh
-# echo "$SUDO_PASS" | sudo apt install zsh -y
-# #echo "0" | zsh
-# echo "$SUDO_PASS" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-# sed -i "s/robbyrussell/agnoster/" ~/.zshrc
-# sed -i "s/%n@%m/%n@%m-wsl/" ~/.oh-my-zsh/themes/agnoster.zsh-theme
-# sed -i "s/%~/%2~/" ~/.oh-my-zsh/themes/agnoster.zsh-theme
-# curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
-# sed -i -e '$aeval `dircolors ~/.dircolors`' ~/.zshrc
-# echo "$SUDO_PASS" | chsh -s $(which zsh)
-
-# # Reload bash profile and config file
-# source ~/.profile
 zsh && source ~/.zshrc
