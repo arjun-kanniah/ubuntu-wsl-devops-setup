@@ -92,6 +92,7 @@
        - docker_hub_username: '{{ docker_hub_user }}'
        - docker_hub_password: '{{ docker_hub_pass }}'
        - dockerfile_build_path: '{{ ansible_roles_path }}/ansible-role-jenkins_as_docker/files'
+       - template_files_path: '{{ ansible_roles_path }}/ansible-role-jenkins_as_docker/templates'
 
     - name: Setup Nginx to Serve Apps on Localhost
       include_role:
