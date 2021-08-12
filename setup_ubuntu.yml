@@ -9,6 +9,22 @@
 
   tasks:
 
+    - name: Ensure git is installed
+      package:
+        name: 'git'
+        state: present
+
+    - name: Parse requirements file
+      set_fact:
+        required_roles: "{{ lookup('file', playbook_dir + '/roles/requirements.yml') | from_yaml }}"
+
+    - name: Clone necessary roles
+      git:
+        repo: '{{ item.src }}'
+        dest: '{{ ansible_roles_path }}/{{ item.name }}'
+        version: '{{ item.version }}'
+      loop: '{{ required_roles }}'
+
     - name: Ensure ssh directory exists
       file: 
         path: '{{ ssh_dir_path }}'

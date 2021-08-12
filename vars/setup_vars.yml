@@ -10,6 +10,7 @@ ubuntu_user_pass: !vault |
 
 ubuntu_user_home: '/home/{{ ubuntu_user }}'
 ubuntu_user_installs: '{{ ubuntu_user_home }}/installation-files'
+playbook_dir: '{{ ubuntu_user_home }}/ubuntu-wsl-devops-setup'
 
 ssh_dir_path: '{{ ubuntu_user_home }}/.ssh'
 ssh_key_path: '{{ ssh_dir_path }}/id_rsa'
