@@ -34,4 +34,6 @@ ansible-playbook ~/ubuntu-wsl-devops-setup/setup_ubuntu.yml --vault-password-fil
 # Reload config files
 source ~/.bashrc 
 source ~/.bash_alias
-zsh && source ~/.zshrc
+zsh && \
+    echo "$SUDO_PASS" | chsh -s $(which zsh) && \
+    source ~/.zshrc

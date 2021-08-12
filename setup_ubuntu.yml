@@ -41,6 +41,7 @@
           alias gpl="git pull"
           alias gps="git push"
           alias gst="git status"
+          alias ghst='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
         insertafter: EOF
         create: yes
 
