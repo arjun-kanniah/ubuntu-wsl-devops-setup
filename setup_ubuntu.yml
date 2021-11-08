@@ -51,7 +51,7 @@
         block: |
           alias gcl="git clone"
           alias gbr="git branch"
-          alias gco="git chekout"
+          alias gco="git checkout"
           alias gad="git add --all"
           alias gcm="git commit -m"
           alias gpl="git pull"
