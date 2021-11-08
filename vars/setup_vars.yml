@@ -63,6 +63,4 @@ app_list:
 
 zsh_theme_name: 'agnoster'
 
-awx_install: 'false'
-jenkins_install: 'false'
-serve_nginx: 'false'
+install_devops_tools: 'false'
