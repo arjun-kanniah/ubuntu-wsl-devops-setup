@@ -99,22 +99,25 @@
       vars:
         - docker_hub_password: '{{ docker_hub_pass }}'
         - awx_repo_dir: '{{ ubuntu_user_installs }}/awx-tower'
+      when: awx_install
 
     - name: Install Jenkins CI
       include_role:
         name: ansible-role-jenkins_as_docker
       vars:
-       - jenkins_admin_user: '{{ jenkins_admin }}'
-       - jenkins_admin_password: '{{ jenkins_admin_pass }}'
-       - docker_hub_username: '{{ docker_hub_user }}'
-       - docker_hub_password: '{{ docker_hub_pass }}'
-       - dockerfile_build_path: '{{ ansible_roles_path }}/ansible-role-jenkins_as_docker/files'
+        - jenkins_admin_user: '{{ jenkins_admin }}'
+        - jenkins_admin_password: '{{ jenkins_admin_pass }}'
+        - docker_hub_username: '{{ docker_hub_user }}'
+        - docker_hub_password: '{{ docker_hub_pass }}'
+        - dockerfile_build_path: '{{ ansible_roles_path }}/ansible-role-jenkins_as_docker/files'
+      when: jenkins_install
 
     - name: Setup Nginx to Serve Apps on Localhost
       include_role:
         name: ansible-role-nginx_for_local
       vars:
         - nginx_app_list: '{{ app_list }}'
+      when: serve_nginx
     
     - name: Check if Zsh and Oh-My-Zsh are installed
       stat:
