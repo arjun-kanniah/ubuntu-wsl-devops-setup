@@ -63,4 +63,4 @@ app_list:
 
 zsh_theme_name: 'agnoster'
 
-install_devops_tools: 'false'
+install_devops_tools: 'true'
