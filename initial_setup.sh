@@ -19,7 +19,7 @@ pip3 install ansible --user
 # Git configs
 git config --global core.autocrlf input
 git config --global user.name "Arjun Kanniah"
-git config --global user.email "arjun.kanniah@outlook.com"
+git config --global user.email "arjun@aceage.com"
 
 # Create ansible vault token
 echo "$SUDO_PASS" > ~/.ansible_vault_pass
