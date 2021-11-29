@@ -49,6 +49,7 @@ docker_hub_pass: !vault |
 app_list:
   - awx
   - jenkins
+  - artifactory
 
 zsh_theme_name: 'agnoster'
 
