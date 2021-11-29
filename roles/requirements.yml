@@ -1,6 +1,11 @@
 ---
 
-- name: ansible-role-awx
+- name: ansible-role-artifactory_as_docker
+  src: https://github.com/arjun-kanniah/ansible-role-artifactory_as_docker.git
+  version: master
+  scm: git
+
+  - name: ansible-role-awx
   src: https://github.com/arjun-kanniah/ansible-role-awx.git
   version: master
   scm: git
