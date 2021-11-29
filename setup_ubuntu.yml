@@ -111,6 +111,11 @@
         - docker_hub_password: '{{ docker_hub_pass }}'
         - dockerfile_build_path: '{{ ansible_roles_path }}/ansible-role-jenkins_as_docker/files'
       when: install_devops_tools | bool
+    
+    - name: Install Artifactory
+      include_role:
+        name: ansible-role-artifactory_as_docker
+      when: install_devops_tools | bool
 
     - name: Setup Nginx to Serve Apps on Localhost
       include_role:
