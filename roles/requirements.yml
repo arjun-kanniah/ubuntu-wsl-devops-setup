@@ -5,7 +5,7 @@
   version: master
   scm: git
 
-  - name: ansible-role-awx
+- name: ansible-role-awx
   src: https://github.com/arjun-kanniah/ansible-role-awx.git
   version: master
   scm: git
