@@ -123,6 +123,13 @@
       vars:
         - nginx_app_list: '{{ app_list }}'
       when: install_devops_tools | bool
+
+    - name: Install Minikube
+      include_role:
+        name: ansible-rolem-minikube
+      vars:
+        - systemctl_script_dir_path: '{{ systemctl_script_path }}'
+      when: install_devops_tools | bool
     
     - name: Check if Zsh and Oh-My-Zsh are installed
       stat:
@@ -138,4 +145,4 @@
         users_installs_dir: '{{ ubuntu_user_installs }}'
         zsh_theme: '{{ zsh_theme_name }}'
       when: ohmyzsh.stat.exists == false
-        
+      

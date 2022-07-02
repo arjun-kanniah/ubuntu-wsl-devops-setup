@@ -25,6 +25,11 @@
   version: master
   scm: git
 
+- name: ansible-role-minikube
+  src: https://github.com/arjun-kanniah/ansible-role-minikube.git
+  version: master
+  scm: git
+
 - name: ansible-role-nginx_for_local
   src: https://github.com/arjun-kanniah/ansible-role-nginx_for_local.git
   version: master

@@ -47,4 +47,6 @@ app_list:
 
 zsh_theme_name: 'agnoster'
 
+systemctl_script_path: '{{ ubuntu_user_installs }}'
+
 install_devops_tools: 'true'
