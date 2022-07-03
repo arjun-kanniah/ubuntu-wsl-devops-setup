@@ -128,6 +128,7 @@
       include_role:
         name: ansible-role-minikube
       vars:
+        - minikube_user: '{{ ubuntu_user }}'
         - systemctl_script_dir_path: '{{ systemctl_script_path }}'
       when: install_devops_tools | bool
     
