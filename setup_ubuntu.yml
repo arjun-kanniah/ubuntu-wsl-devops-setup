@@ -57,7 +57,19 @@
           alias gpl="git pull"
           alias gps="git push"
           alias gst="git status"
+          alias gstsh="git stash"
           alias ghst='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+        insertafter: EOF
+        create: yes
+
+    - name: Create other aliases
+      blockinfile:
+        path: '{{ bash_alias_file_path }}'
+        block: |
+          alias python="python3"
+          alias pip="pip3"
+          alias kct="kubectl"
+          alias mnkb="minikube"
         insertafter: EOF
         create: yes
 
