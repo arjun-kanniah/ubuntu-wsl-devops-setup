@@ -78,12 +78,14 @@
         name: ansible-role-terraform
       vars:
         - terraform_version: '{{ terraform_install_version }}'
+      when: install_iac_tools | bool
 
     - name: Install Packer
       include_role: 
         name: ansible-role-packer
       vars:
         - packer_version: '{{ packer_install_version }}'
+      when: install_iac_tools | bool
 
     - name: Install Docker CE and Docker Compose
       include_role:
