@@ -137,7 +137,7 @@
       vars:
         - minikube_user: '{{ ubuntu_user }}'
         - systemctl_script_dir_path: '{{ systemctl_script_path }}'
-      when: install_devops_tools | bool
+      when: install_minikube_tools | bool
     
     - name: Check if Zsh and Oh-My-Zsh are installed
       stat:
