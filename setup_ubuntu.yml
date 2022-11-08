@@ -123,6 +123,8 @@
     - name: Install Artifactory
       include_role:
         name: ansible-role-artifactory_as_docker
+      vars:
+        - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
       when: install_devops_tools | bool
 
     - name: Setup Nginx to Serve Apps on Localhost
