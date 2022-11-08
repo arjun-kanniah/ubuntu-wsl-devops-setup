@@ -117,6 +117,7 @@
         - docker_hub_username: '{{ docker_hub_user }}'
         - docker_hub_password: '{{ docker_hub_pass }}'
         - dockerfile_build_path: '{{ ansible_roles_path }}/ansible-role-jenkins_as_docker/files'
+        - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
       when: install_devops_tools | bool
     
     - name: Install Artifactory
