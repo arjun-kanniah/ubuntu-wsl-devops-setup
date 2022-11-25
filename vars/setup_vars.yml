@@ -50,6 +50,7 @@ app_list:
   - awx
   - jenkins
   - artifactory
+  - jupyter
 
 zsh_theme_name: 'agnoster'
 
@@ -60,3 +61,5 @@ install_devops_tools: 'false'
 install_iac_tools: 'false'
 
 install_minikube_tools: 'false'
+
+install_datascience_tools: 'true'
