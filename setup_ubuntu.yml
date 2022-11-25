@@ -126,6 +126,14 @@
       vars:
         - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
       when: install_devops_tools | bool
+      
+    - name: Install Apps for Data Science
+      include_role:
+        name: ansible-role-datascience
+      vars:
+        - jupyter_user: '{{ ubuntu_user }}'
+        - jupyter_user_path: '{{ ubuntu_user_home }}'
+      when: install_datascience_tools | bool
 
     - name: Setup Nginx to Serve Apps on Localhost
       include_role:
