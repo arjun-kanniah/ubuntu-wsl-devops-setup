@@ -54,3 +54,9 @@
   src: https://github.com/arjun-kanniah/ansible-role-ohmyzsh.git
   version: master
   scm: git
+  
+- name: ansible-role-datascience
+  src: https://github.com/arjun-kanniah/ansible-role-datascience.git
+  version: master
+  scm: git
+  
