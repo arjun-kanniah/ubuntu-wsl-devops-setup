@@ -127,6 +127,20 @@
         - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
       when: install_devops_tools | bool
 
+    - name: Install Jupyter Notebook
+      include_role:
+        name: ansible-role-jupyer_as_docker
+      vars:
+        - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
+      when: install_jupyter_tools | bool
+
+    - name: Install Miniconda
+      include_role:
+        name: ansible-role-miniconda
+      vars:
+        - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
+      when: install_jupyter_tools | bool
+
     - name: Setup Nginx to Serve Apps on Localhost
       include_role:
         name: ansible-role-nginx_for_local
