@@ -50,6 +50,7 @@ app_list:
   - awx
   - jenkins
   - artifactory
+  - jupyter
 
 zsh_theme_name: 'agnoster'
 
