@@ -61,6 +61,6 @@
   scm: git
 
 - name: ansible-role-miniconda
-  src: https://github.com/arjun-kanniah/miniconda.git
+  src: https://github.com/arjun-kanniah/ansible-role-miniconda.git
   version: master
   scm: git
