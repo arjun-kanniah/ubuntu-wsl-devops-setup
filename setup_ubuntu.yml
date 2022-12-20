@@ -146,7 +146,7 @@
         name: ansible-role-nginx_for_local
       vars:
         - nginx_app_list: '{{ app_list }}'
-      when: install_datascience_tools | bool
+      when: install_devops_tools | bool
 
     - name: Install Minikube
       include_role:
