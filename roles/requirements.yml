@@ -55,8 +55,12 @@
   version: master
   scm: git
   
-- name: ansible-role-datascience
-  src: https://github.com/arjun-kanniah/ansible-role-datascience.git
+- name: ansible-role-jupyter_as_docker
+  src: https://github.com/arjun-kanniah/ansible-role-jupyter_as_docker.git
   version: master
   scm: git
-  
+
+- name: ansible-role-miniconda
+  src: https://github.com/arjun-kanniah/ansible-role-miniconda.git
+  version: master
+  scm: git
