@@ -26,6 +26,7 @@ echo "$SUDO_PASS" > ~/.ansible_vault_pass
 echo "$SUDO_PASS" | sudo chmod 0644 ~/.ansible_vault_pass
 
 source ~/.profile
+echo "$SUDO_PASS" | sudo apt autoremove -y
 
 # Install and Setup Ubuntu for devops
 ansible-playbook ~/repos/ubuntu-wsl-devops-setup/setup_ubuntu.yml --vault-password-file ~/.ansible_vault_pass
