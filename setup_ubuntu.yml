@@ -127,13 +127,19 @@
         - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
       when: install_devops_tools | bool
       
-    - name: Install Apps for Data Science
+    - name: Install Jupyter Notebook
       include_role:
-        name: ansible-role-datascience
+        name: ansible-role-jupyter_as_docker
       vars:
-        - jupyter_user: '{{ ubuntu_user }}'
-        - jupyter_user_path: '{{ ubuntu_user_home }}'
-      when: install_datascience_tools | bool
+        - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
+      when: install_jupyter_tools | bool
+
+    - name: Install Miniconda
+      include_role:
+        name: ansible-role-miniconda
+      vars:
+        - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
+      when: install_jupyter_tools | bool
 
     - name: Setup Nginx to Serve Apps on Localhost
       include_role:
