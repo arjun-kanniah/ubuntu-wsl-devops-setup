@@ -62,4 +62,4 @@ install_iac_tools: 'false'
 
 install_minikube_tools: 'false'
 
-install_datascience_tools: 'true'
+install_jupyter_tools: 'true'
