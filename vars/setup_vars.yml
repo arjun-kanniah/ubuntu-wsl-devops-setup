@@ -37,6 +37,7 @@ pip_package_list:
   - name: awscli
   - name: ansible
     extra_args: --user
+  - name: jupyter
 
 docker_hub_user: '{{ ubuntu_user }}'
 docker_hub_pass: !vault |
