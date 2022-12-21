@@ -63,7 +63,7 @@
           alias pip="pip3"
           alias kc="kubectl"
           alias mkb="minikube"
-          alias jupyter-notebook="~/.local/bin/jupyter-notebook --no-browser"
+          alias jupyter-notebook="~/.local/bin/jupyter-notebook --no-browser &> ~/.jupyter_server.out & disown"
         insertafter: EOF
         create: yes
 
