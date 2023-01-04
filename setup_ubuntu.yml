@@ -170,3 +170,10 @@
         users_installs_dir: '{{ ubuntu_user_installs }}'
         zsh_theme: '{{ zsh_theme_name }}'
       when: ohmyzsh.stat.exists == false
+      
+    - name: Install nvm
+      ansible.builtin.shell: >
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+      args:
+        creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+      become_user: '{{ ubuntu_user }}'
