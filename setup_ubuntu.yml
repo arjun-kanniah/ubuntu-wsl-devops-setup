@@ -61,8 +61,8 @@
           alias ghst='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
           alias python="python3"
           alias pip="pip3"
-          alias kct="kubectl"
-          alias mnkb="minikube"
+          alias kc="kubectl"
+          alias mkb="minikube"
         insertafter: EOF
         create: yes
 
