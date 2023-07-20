@@ -101,6 +101,14 @@
       vars:
         - pip_install_packages: '{{ pip_package_list }}'
 
+    - name: Ensure jupyter_home directory exists
+      file: 
+        path: '{{ jupyter_home_path }}'
+        state: directory
+        owner: '{{ ubuntu_user }}'
+        group: '{{ ubuntu_user }}'
+        mode: '0755'
+
     - name: Install AWX Tower
       include_role:
         name: ansible-role-awx
