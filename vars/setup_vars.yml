@@ -39,6 +39,8 @@ pip_package_list:
     extra_args: --user
   - name: jupyter
 
+jupyter_home_path: '{{ ubuntu_user_home }}/jupyter_home'
+
 docker_hub_user: '{{ ubuntu_user }}'
 docker_hub_pass: !vault |
           $ANSIBLE_VAULT;1.1;AES256
