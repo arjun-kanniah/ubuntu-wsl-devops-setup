@@ -20,11 +20,6 @@
   version: master
   scm: git
 
-- name: ansible-role-jenkins_as_docker
-  src: https://github.com/arjun-kanniah/ansible-role-jenkins_as_docker.git
-  version: master
-  scm: git
-
 - name: ansible-role-minikube
   src: https://github.com/arjun-kanniah/ansible-role-minikube.git
   version: master
