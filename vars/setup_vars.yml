@@ -25,7 +25,7 @@ bash_alias_file_path: '{{ ubuntu_user_home }}/.bash_alias'
 openjdk_package: 'openjdk-11-jdk'
 java_home_path: '/usr/lib/jvm/java-11-openjdk-amd64'
 
-terraform_install_version: '1.0.2'
+terraform_install_version: '1.5.3'
 packer_install_version: '1.7.0'
 
 docker_sudo_users: '{{ ubuntu_user }}'
