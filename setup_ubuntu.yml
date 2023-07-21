@@ -141,7 +141,7 @@
         name: ansible-role-miniconda
       vars:
         - ubuntu_user_home_path: '{{ ubuntu_user_home }}'
-      when: install_devops_tools | bool
+      when: install_jupyter_tools | bool
 
     - name: Setup Nginx to Serve Apps on Localhost
       include_role:
