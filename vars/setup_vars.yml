@@ -28,6 +28,10 @@ java_home_path: '/usr/lib/jvm/java-11-openjdk-amd64'
 terraform_install_version: '1.6.3'
 packer_install_version: '1.9.4'
 
+jupyter_home_dir: '{{ ubuntu_user_home }}/jupyter_home'
+jupyter_user_id: '1000'
+jupyter_group_id: '1000'
+
 docker_sudo_users: '{{ ubuntu_user }}'
 
 pip_package_list:
