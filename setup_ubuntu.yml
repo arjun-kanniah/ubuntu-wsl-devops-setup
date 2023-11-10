@@ -63,6 +63,7 @@
           alias pip="pip3"
           alias kc="kubectl"
           alias mkb="minikube"
+          alias jupyterlab='nohup /usr/local/bin/jupyter-lab --no-browser --notebook-dir="~/jupyter_home" &!'
         insertafter: EOF
         create: yes
 
@@ -79,6 +80,13 @@
       vars:
         - terraform_version: '{{ terraform_install_version }}'
       when: install_iac_tools | bool
+
+    - name: Ensure Jupyter Home Directory Exists
+      file:
+        path: "{{ jupyter_home_dir_host }}"
+        state: directory
+        owner: "{{ jupyter_user_id }}"
+        group: "{{ jupyter_group_id }}"
 
     - name: Install Packer
       include_role: 
