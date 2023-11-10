@@ -37,6 +37,3 @@ source ~/.bash_alias
 zsh && \
     echo "$SUDO_PASS" | chsh -s $(which zsh) && \
     source ~/.zshrc
-    
-# Remove alias
-unalias jupyter-notebook
