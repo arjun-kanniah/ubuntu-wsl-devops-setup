@@ -83,7 +83,7 @@
 
     - name: Ensure Jupyter Home Directory Exists
       file:
-        path: "{{ jupyter_home_dir }}"
+        path: "{{ jupyter_dir_path }}"
         state: directory
         owner: "{{ jupyter_user_id }}"
         group: "{{ jupyter_group_id }}"
