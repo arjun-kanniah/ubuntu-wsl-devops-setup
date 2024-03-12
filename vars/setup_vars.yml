@@ -65,4 +65,4 @@ install_jupyter_tools: 'true'
 
 install_iac_tools: 'true'
 
-install_minikube_tools: 'true'
+install_minikube_tools: 'false'
