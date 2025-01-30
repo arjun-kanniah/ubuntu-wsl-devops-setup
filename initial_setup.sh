@@ -16,7 +16,10 @@ echo "$SUDO_PASS" | sudo apt-get upgrade -y
 echo "$SUDO_PASS" | sudo apt install python3-pip -y
 echo "$SUDO_PASS" | sudo apt install pipx -y
 pipx ensurepath
-pipx install ansible --force
+echo "$SUDO_PASS" | sudo apt install software-properties-common
+echo "$SUDO_PASS" | sudo add-apt-repository --yes --update ppa:ansible/ansible
+echo "$SUDO_PASS" | sudo apt update
+echo "$SUDO_PASS" | sudo apt install ansible
 
 # Git configs
 git config --global core.autocrlf input
