@@ -16,7 +16,7 @@ echo "$SUDO_PASS" | sudo apt-get upgrade -y
 echo "$SUDO_PASS" | sudo apt install python3-pip -y
 echo "$SUDO_PASS" | sudo apt install pipx -y
 pipx ensurepath
-pipx install ansible
+pipx install ansible --force
 
 # Git configs
 git config --global core.autocrlf input
