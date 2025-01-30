@@ -14,7 +14,8 @@ echo "$SUDO_PASS" | sudo apt-get upgrade -y
 
 # Install pip3 and ansible
 echo "$SUDO_PASS" | sudo apt install python3-pip -y
-pip3 install ansible --user
+echo "$SUDO_PASS" | sudo apt install pipx
+pipx install ansible --user
 
 # Git configs
 git config --global core.autocrlf input
