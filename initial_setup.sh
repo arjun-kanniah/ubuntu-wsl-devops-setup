@@ -19,7 +19,7 @@ pipx ensurepath
 echo "$SUDO_PASS" | sudo apt install software-properties-common
 echo "$SUDO_PASS" | sudo add-apt-repository --yes --update ppa:ansible/ansible
 echo "$SUDO_PASS" | sudo apt update
-echo "$SUDO_PASS" | sudo apt install ansible
+echo "$SUDO_PASS" | sudo apt install ansible -y
 
 # Git configs
 git config --global core.autocrlf input
